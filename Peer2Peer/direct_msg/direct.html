@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Message</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <header>
+        <h1>Direct Message</h1>
+    </header>
+    <main>
+        <div class="contacts">
+            <h2>Contacts</h2>
+            <label for="student">Student</label>
+            <input type="checkbox" id="student">
+            <label for="lecturer">Lecturer</label>
+            <input type="checkbox" id="lecturer">
+            <label for="tutor">Tutor</label>
+            <input type="checkbox" id="tutor">
+        </div>
+        <div class="message-box">
+            <h2>Message Box</h2>
+            <textarea id="message" placeholder="Type your message..."></textarea>
+            <button id="send">Send</button>
+        </div>
+        <div class="history">
+            <h2>Message Inbox</h2>
+            <button id="viewHistory">View Inbox</button>
+            <div id="historyList"></div>
+            <button id="deleteSelected">Delete Selected</button>
+            <button id="deleteAll">Delete All</button>
+        </div>
+        <button onclick="window.location.href='../dashboards/student.html';" > Back</button>
+    </main>
+    <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="..\shared\footer.js"></script>
+    <script src="script.js"></script>
+    <script src="..\shared\navlogout.js"></script>
+</body>
+</html>
+

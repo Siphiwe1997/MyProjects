@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modules</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background color for content */
+            border-radius: 10px;
+        }
+        .module {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: medium;
+            font-weight: bolder;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .module a {
+            text-decoration: none;
+            color: #000000;
+        }
+      
+         /* unvisited link */
+        .module :link {
+          color: red;
+        }
+
+        /* mouse over link */
+        .module a:hover {
+         color: rgb(5, 37, 218);
+        }
+        
+     .button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    .button:hover{
+        background-color:#345c86;
+        color: rgb(245, 245, 253);
+    }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <header>
+        <h1>Modules</h1>
+    </header>
+    <div class="container">
+        <div class="module">
+            <a href="resource.html"> 
+                Programming Part I
+            </a>
+        </div>
+
+        <div class="module">
+            <a href="resource.html"> 
+                Programming Part II
+            </a>
+        </div>
+
+
+        <div class="module">
+            <a href="resource.html">
+                Machine Learning
+            </a>
+        </div>
+
+        <div class="module">
+            <a href="resource.html">
+                Statistical Physics
+            </a>
+        </div>
+
+        <div class="module">
+            <a href="resource.html">
+                Solid State Physics
+            </a>
+        </div>
+
+        <div class="module">
+            <a href="resource.html">
+                Quantum Mechanics
+            </a>
+        </div>
+
+        <div class="module">
+            <a href="resource.html">
+                Electrodynamics
+            </a>
+        </div>
+        <button class="button" onclick="window.location.href = '../dashboards/student.html';">
+            Back
+        </button>
+    </div>
+    <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="..\shared\footer.js"></script>
+    <script src="..\shared\navlogout.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/custom.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Report Tutor Misconduct</title>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <header>
+        <h1>Report Tutor Misconduct</h1>
+    </header>
+  <div class="container">
+    <form id="report-form">
+        <label for="tutor-name">Tutor's Name:</label>
+        <input type="text" id="tutor-name" name="tutor-name" required>
+
+        <label for="date">Date of Incident:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="incident-description">Incident Description:</label>
+        <textarea id="incident-description" name="incident-description" rows="4" required></textarea>
+
+        <label for="your-name">Your Name:</label>
+        <input type="text" id="your-name" name="your-name" required>
+
+        <label for="your-email">Your Email:</label>
+        <input type="email" id="your-email" name="your-email" required>
+
+        <button type="submit">Submit Report</button>
+    </form>
+    <button class="btn btn-back" onclick="window.location.href='../dashboards/student.html';">
+        Back
+    </button>
+  </div>
+    <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="..\shared\footer.js"></script>
+    <script src="..\shared\navlogout.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

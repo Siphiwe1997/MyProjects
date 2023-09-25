@@ -1,0 +1,16 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Create Role";
+    ViewBag.Header = "Create Role";
+}
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label for="name" class="from-label">Name of new role:</label>
+        <input name="name" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+

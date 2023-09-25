@@ -1,0 +1,24 @@
+﻿@model Skill
+@{
+    ViewData["Title"] = "Delete Skill";
+    ViewBag.Header = "Delete Skill";
+}
+
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+
+<h4>Are you sure you want to delete this @Model.Name?</h4>
+<div>
+    <hr />
+    <p>
+        <span class="fw-bold">
+            @Html.DisplayNameFor(model => model.Name)
+        </span><br />
+        @Model.Name
+    </p>
+
+    <form method="post" asp-action="Delete">
+        <input type="hidden" asp-for="SkillId" />
+        <input type="submit" value="Delete" class="btn btn-primary" />
+        <a asp-controller="Skill" asp-action="Index" class="btn btn-outline-primary">Back to List</a>
+    </form>
+</div>

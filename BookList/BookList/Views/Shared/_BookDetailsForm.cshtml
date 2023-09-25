@@ -1,0 +1,36 @@
+﻿@model Book
+
+<input asp-for="BookId" type="hidden" />
+
+<div class="mb-3">
+	<label asp-for="Name" class="form-label"></label>
+	<input asp-for="Name" class="form-control" type="text" />
+	<span asp-validation-for="Name"></span>
+</div>
+
+<div class="mb-3">
+	<label asp-for="Year" class="form-label"></label>
+	<input asp-for="Year" class="form-control" type="text" />
+	<span asp-validation-for="Year"></span>
+</div>
+
+<div class="mb-3">
+	<label asp-for="Author" class="form-label"></label>
+	<input asp-for="Author" class="form-control" type="text" />
+	<span asp-validation-for="Author"></span>
+</div>
+ 
+<div class="mb-3">
+	<label asp-for="Rating" class="form-label"></label>
+	<input asp-for="Rating" class="form-control" type="text" />
+	<span asp-validation-for="Rating"></span>
+</div>
+
+<div class="mb-3">
+	<label asp-for="BookType" class="form-label"></label>
+
+	<select asp-for="BookTypeId" asp-items="@ViewBag.BookTypes" class="form-select">
+		<option>--Please Select--</option>
+	</select>
+	<span asp-validation-for="BookTypeId"></span>
+</div>

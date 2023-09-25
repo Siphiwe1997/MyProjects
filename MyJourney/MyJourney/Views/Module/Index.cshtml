@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Module>
+
+@if (Model != null && Model.All(m=>m.Year == 2020))
+{
+    ViewBag.Header = "My First-Year Modules";
+    ViewData["Title"] = "First-Year Modules";
+}
+else if (Model != null && Model.All(m => m.Year == 2021))
+{
+    ViewBag.Header = "My Second-Year Modules";
+    ViewData["Title"] = "Second-Year Modules";
+}
+else if (Model != null && Model.All(m => m.Year == 2022))
+{
+    ViewBag.Header = "My Third-Year Modules";
+    ViewData["Title"] = "Third-Year Modules";
+}
+
+else
+{
+    ViewBag.Header = "My Fourth-Year Modules";
+    ViewData["Title"] = "Fourth-Year Modules";
+}
+
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="btn-close"
+                data-bs-dismiss="alert" aria-label="Close">
+        </button>
+        @TempData["Message"]
+    </div>
+}
+
+<table class="table-bordered border-dark text-center table-content">
+    <thead class="bg-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ModuleName) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.ModuleCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModuleMarks) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Credits) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.PassDescription)
+            </th>
+            @if (User.IsInRole("Admin"))
+            {
+                <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Module module in Model)
+        {
+            <tr>
+                <td class="text-start">
+                    @module.ModuleName
+                </td>
+                <td>
+                    @module.ModuleCode
+                </td>
+                <td>
+                    @module.ModuleMarks
+                </td>
+                <td>
+                    @module.Credits
+                </td>
+                <td class="text-start">
+                    @module.PassDescription
+                </td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@module.ModuleId">Edit</a> |
+                        <a class="btn btn-primary" asp-action="Delete"  asp-route-id="@module.ModuleId"> Delete</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+@if (User.IsInRole("Admin"))
+{
+    <a class="btn btn-primary mt-3" asp-action="Add">Add Module</a>
+}
+<a class="btn btn-primary mt-3" asp-controller="Module" asp-action="DisplayAll">List All Modules</a>
+
+@if (ViewBag.Credits != null)
+{
+    <div>
+        <h3>Total Credits: @ViewBag.Credits</h3>
+    </div>
+}
+
+@if (ViewBag.Average != null)
+{
+    <div>
+        <h3>Average Score: @ViewBag.Average%</h3>
+    </div>
+}

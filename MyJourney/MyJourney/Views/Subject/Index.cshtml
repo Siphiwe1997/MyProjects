@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Subject>
+
+@{
+    ViewData["Title"] = "School Subjects";
+}
+@{
+    ViewBag.Header = "My Matric Subjects";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="btn-close"
+                data-bs-dismiss="alert" aria-label="Close">
+        </button>
+        @TempData["Message"]
+    </div>
+}
+
+<table class="table-bordered border-dark text-center table-content w-50">
+    <thead class="bg-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectName) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectMarks) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level) 
+            </th>
+            @if (User.IsInRole("Admin"))
+            {
+                <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Subject subject in Model)
+        {
+            <tr>
+                <td class="text-start">
+                    @subject.SubjectName
+                </td>
+                <td>
+                    @subject.SubjectMarks
+                </td>
+                <td>
+                    @subject.Level
+                </td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@subject.SubjectId">Edit</a> |
+                    <a class="btn btn-primary" asp-action="Delete"  asp-route-id="@subject.SubjectId"> Delete</a>
+                </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+@if (User.IsInRole("Admin"))
+{
+    <a class="btn btn-primary mt-3" asp-action="Add">Add Subject</a>
+}
+
+@if (ViewBag.ApsScore != null)
+{
+    <div>
+        <h3>APS Score: @ViewBag.ApsScore</h3>
+    </div>
+}
+
+@if (ViewBag.AverageScore != null)
+{
+    <div>
+        <h3>Average Score: @ViewBag.AverageScore%</h3>
+    </div>
+}

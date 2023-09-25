@@ -1,0 +1,16 @@
+﻿@model Skill
+@{
+	ViewData["Title"] = "Add Skill";
+	ViewBag.Header = "Add Skill";
+}
+
+<form asp-action="Edit" method="post">
+	<div class="mb-3">
+		<label asp-for="Name" class="form-label"></label>
+		<input asp-for="Name" class="form-control" type="text" />
+		<span asp-validation-for="Name"></span>
+	</div>
+	<button class="btn btn-success" type="submit">Add Skill</button>
+	<a asp-controller="Skill" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
+

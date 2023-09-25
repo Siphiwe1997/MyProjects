@@ -1,0 +1,11 @@
+﻿@model Book
+@{
+	ViewData["Title"] = "Add Book";
+}
+<h2>Add Book</h2>
+
+<form asp-action="Add" method="post"> 
+	<partial name="_BookDetailsForm" model="@Model" />
+	<button type="submit" class="btn btn-primary" >Submit</button>
+	<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form> 

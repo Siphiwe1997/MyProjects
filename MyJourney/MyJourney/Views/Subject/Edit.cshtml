@@ -1,0 +1,40 @@
+﻿@model Subject
+
+@{
+    ViewData["Title"] = ViewBag.Action +" Subject";
+}
+
+<h2>@ViewBag.Action Subject</h2>
+
+<hr />
+<h4>Student</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Edit">
+            <input type="hidden" asp-for="SubjectId" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="SubjectName" class="form-label"></label>
+                <input asp-for="SubjectName" class="form-control" />
+                <span asp-validation-for="SubjectName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SubjectMarks" class="form-label"></label>
+                <input asp-for="SubjectMarks" class="form-control" />
+                <span asp-validation-for="SubjectMarks" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Level" class="form-label"></label>
+                <input asp-for="Level" class="form-control" />
+                <span asp-validation-for="Level" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <br />
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <button asp-action="Index" class="btn btn-outline-secondary">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

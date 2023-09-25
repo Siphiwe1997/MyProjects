@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Skill>
+@{
+    ViewData["Title"] = "Siphiwe Ngubane Resume";
+}
+@{
+    ViewBag.Header = "My Resume";
+}
+
+<div class="container mt-5 resume-content fw-bold">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="resume-section">
+                <h2 class="resume-header">Professional Summary</h2>
+                <p>
+                    I am a hard-working student and highly motivated person who is reliable in
+                    working under pressure and effectively in a team. I can use own initiatives
+                    to meet challenging deadlines and objectives. I am always ready to deal with work related challenges.
+                    I take punctuality, honesty, and respect as my first priorities. I easily adapt to environments. I also have
+                    good inter-personal skills of communication. Acquiring knowledge and skill is my basic objective,
+                    for efficient practicality of any given assignments.
+                </p>
+            </div>
+            <div class="resume-section">
+                <h2 class="resume-header">Education</h2>
+                <p>
+                    BSc in IT majoring in Computer science and Physics<br>
+                    Expected in 11/2023<br>
+                    University of the Free state, Bloemfontein
+                </p>
+            </div>
+            <div class="resume-section">
+                <h2 class="resume-header">Languages</h2>
+                <ul>
+                    <li>IsiZulu - Proficient</li>
+                    <li>English - Upper intermediate</li>
+                </ul>
+            </div>
+            <div class="resume-section">
+                <h2 class="resume-header">Skills</h2>
+                <ul>
+                    @foreach(Skill skill in Model)
+                    {
+                        <li>@skill.Name</li>
+                    }
+                </ul>
+            </div>
+            <div class="resume-section">
+                <h2 class="resume-header">Achievements</h2>
+                <ul>
+                    <li>CHPC - NITheCS Coding Summer School certificate</li>
+                    <li>Top achiever in Maths, Physics, and Agricultural science (Grade 10-12)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="resume-section">
+                <h2 class="resume-header">Experience</h2>
+                <p>
+                    <strong>Demonstrator (Programming)</strong>, 03/2023-Present <br />
+                    University of the Free State, Bloemfontein
+                </p>
+                <ul>
+                    <li>
+                        Assess student's progress throughout practical sessions.
+                    </li>
+                    <li>
+                         Assisted students in understanding programming
+                         concepts and problem-solving techniques.
+                    </li>
+                </ul>
+                <p>
+                    <strong>Assistant Teacher (Volunteer)</strong>, 05/2015-11/2016 <br />
+                    Lushaba Secondary School, Nkandla
+                </p>
+                <ul>
+                    <li>
+                        Volunteered to teach mathematics and physics in schools near my village.
+                    </li>
+                    <li>
+                        Provided one-on-one tutoring sessions to learners to enhance their 
+                        understanding of mathematical and physical concepts.
+                    </li>
+                    <li>
+                        Inspired and motivated learners to pursue higher education and 
+                        careers in STEM fields.
+                    </li>
+                </ul>
+            </div>
+            <div class="resume-section">
+                <h2 class="resume-header">Contact</h2>
+                <address>
+                    <i class="icon fas fa-map-marker-alt"></i> 
+                       24 Groenewoud St,<br>
+                       <div class="ps-4">Universitas, 9321</div>
+                    
+                    <i class="icon fas fa-phone"></i>
+                    078 195 9938<br>
+                    <i class="icon fas fa-envelope"></i>
+                    <a href="mailto:2018530325@ufs4life.ac.za">2018530325@ufs4life.ac.za</a>
+                </address>
+            </div>
+            <div class="resume-section">
+                <h2 class="resume-header">References</h2>
+                <p>
+                    Mrs S Mocwana (UFS)<br>
+                    Senior Assistant Officer<br>
+                    <i class="icon fas fa-phone"></i>
+                    051 401 2754
+                </p>
+                <p>
+                    Prof. F Petruccione<br>
+                    CHPC & NITheCS<br>
+                    <i class="icon fas fa-phone"></i>
+                    031 260 2770
+                </p>
+                <p>
+                    Mr B.W Dube<br>
+                    School Principal<br>
+                    <i class="icon fas fa-phone"></i>
+                    082 587 9238
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

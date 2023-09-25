@@ -1,0 +1,124 @@
+/*home page*/
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/home/home.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.068);
+}
+
+.navbar-logo {
+    font-weight: bold;
+    color: antiquewhite;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+    color: rgb(37, 5, 245);
+}
+.navbar-links a:hover{
+    color: rgba(181, 187, 14, 0.929);
+}
+.page-content {
+    text-align: center;
+    padding: 38px 0;
+    margin-bottom: 0px;
+    color: rgb(226, 226, 236);
+    font-size: larger;
+    font-weight: bolder;
+}
+/*Log in page*/
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-form input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button, .btn-forgot {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+  background-color: #1a1616;
+  color: white;
+}
+
+header {
+    color: #fff;
+    text-align: center;
+    background-color: #007BFF;
+    padding-top: 10px;
+    padding-bottom: 10px ;
+    font-weight: bolder;
+}
+button{
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-forgot{
+margin-top: 5px;
+}
+
+.btn-forgot:hover{
+background-color: black;
+}
+.user{
+    width: 5%;
+    height: 5%;
+    border: #007BFF;
+    border-radius: 5%;
+}
+
+footer{
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding-bottom: 4px;
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bolder;
+}

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" asp-href-include="~/lib/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" asp-href-include="~/lib/font-awesome/css/all.min.css" />
+
+    <!-- Custom style sheet-->
+    <link rel="stylesheet" asp-href-include="~/css/custom.css" />
+
+    <!--Resume style sheet-->
+    <link rel="stylesheet" asp-href-include="~/css/site.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">My Journey</a>
+            <!-- Toggler/collapsible Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Subject" asp-action="Index">Matric</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Module" asp-action="Index">1st-Year</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Module" asp-action="Index" id="secondYearLink">2nd-Year</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Module" asp-action="Index" id="thirdYearLink">3rd-Year</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Module" asp-action="Index" id="fourthYearLink">4th-Year</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Module" asp-action="DisplayAll">All Modules</a>
+                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Skill" asp-action="Index">Skills</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Admin</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-controller="Admin"
+                                       asp-action="Index">User Management</a>
+
+                                    <a class="dropdown-item" asp-controller="RoleAdmin"
+                                       asp-action="Index">Role Management</a>
+                                </div>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Resume" asp-action="Index">Resume</a>
+                        </li>
+                        @if (!User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact Me</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <!-- Move to the right -->
+            <div class="ml-auto">
+                <ul class="navbar-nav">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-link">Hello, @User.Identity.Name</li>
+                        <li class="nav-item">
+                            <form asp-controller="Account" asp-action="Logout" method="post">
+                                <button class="btn btn-link nav-link" type="submit">Log Out</button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                       <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Login">Log In</a>
+                       </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        <div class="my-4 p-4 bg-primary text-white rounded">
+            <h2 class="text-center">@ViewBag.Header</h2>
+        </div>
+
+        @RenderBody()
+    </div>
+
+    <div class="container">
+        <div class="border-top border-2 border-dark fw-bold text-muted text-center small">
+            <p>
+                Created by: S.T.Ngubane (201853025)<br />
+                <span class="fas fa-copyright"></span> University Of the Free State(2023)
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script asp-src-include="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script asp-src-include="js/Year.js"></script>
+</body>
+</html>

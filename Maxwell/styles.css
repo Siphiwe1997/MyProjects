@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    border: 1px solid #333;
+    overflow: hidden;
+    margin: 20px auto;
+    background-color: #fff; /* Particle container background color */
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    animation: moveParticle linear infinite;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+label {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+input[type="range"] {
+    width: 150px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Particle animation */
+@keyframes moveParticle {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100%, 0);
+    }
+}

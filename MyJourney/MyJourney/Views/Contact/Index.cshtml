@@ -1,0 +1,53 @@
+﻿@model Contact
+@{
+    ViewBag.Title = "Contact Me";
+    ViewBag.Header = "Contact Me";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="btn-close"
+                data-bs-dismiss="alert" aria-label="Close">
+        </button>
+        @TempData["Message"]
+    </div>
+}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="fw-bold">Feel free to get in touch with me using the information below:</p>
+            <h2>Contact Information</h2>
+            <address class="fw-bold">
+                <strong>Siphiwe Thembelani Ngubane</strong><br>
+                Email: <a href="mailto:2018530325@ufs4life.ac.za">2018530325@ufs4life.ac.za</a><br>
+                Phone: (+27) 078 195 9938<br>
+                Address: 24 Groenewoud Street, <br /> Universitas 9321, <br />South Africa<br>
+            </address>
+        </div>
+        <div class="col-md-6">
+            <h2>Contact Form</h2>
+            <!-- Contact Form -->
+            <form method="post" action="Index">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" type="text" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" type="email" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Message" class="form-label">Message</label>
+                    <textarea asp-for="Message" class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer2Peer Tutoring System</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+    <style>
+        footer{
+            background-color: rgba(0, 0, 0, 0.804);
+            margin-top: 5.5%;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="page-content">
+        <h1>Welcome to Student Peer to Peer Tutoring System</h1>
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form class="login-form">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <button onclick="window.location.href='https://selfservice.ufs.ac.za/sspr/public/forgottenpassword';" class="btn btn-forgot">
+            Forgot Password?
+        </button>
+    </div>
+    <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="..\shared\footer.js"></script>
+    <!--<script src="..\shared\navbar.js"></script>-->
+    <script src="logindatabase.js"></script>
+</body>
+</html>

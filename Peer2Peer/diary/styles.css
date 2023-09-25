@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 1px;
+}
+
+main {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f7eeee;
+    border-radius: 2%;
+    margin: 0 auto; 
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 800px;
+    
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+h2 {
+    border-bottom: 1px solid #ccc;
+}
+
+label, input, select, textarea {
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.btn {
+    margin-top: 5px;
+}
+
+footer {
+    background-color: #007BFF;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+#view-entries {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.entry {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Allow text to wrap */
+    max-width: 100%; /* Prevent entries from overflowing the container */
+}
+
+#audio-tool {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+/* Hide text entry when audio is selected */
+#text-entry {
+    display: none;
+}
+
+/* Styling for audio recording tool */
+#audio-entry {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}

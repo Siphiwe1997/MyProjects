@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background color for content */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .resource {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            color: blue;
+        }
+        .button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+      
+    }
+    
+    .button:hover{
+        color: rgb(226, 226, 244);
+        background-color: #4e7db0;
+    }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <header>
+        <h1>Resources</h1>
+    </header>
+    <div class="container">
+        <a href="../develop/under.html">
+         <div class="resource">
+            <h2>Study Materials</h2>
+            <p>Access study materials for your modules.</p>
+         </div>
+        </a>
+
+        <a href="../develop/under.html">
+         <div class="resource">
+            <h2>Notes</h2>
+            <p>Access notes for your modules.</p>
+         </div>
+        </a>
+        <!-- Resources based on roles -->
+        <a href="../develop/under.html">
+         <div class="resource" id="assignments">
+            <h2>Assignments</h2>
+            <p>Access assignments for your modules.</p>
+         </div>
+        </a>
+        <a href="../develop/under.html">
+         <div class="resource" id="test-papers">
+            <h2>Test Papers</h2>
+            <p>Access test papers for your modules.</p>
+         </div>
+        </a>
+        
+        <a href="../develop/under.html">
+        <div class="resource" id="exam-papers">
+            <h2>Exam Papers</h2>
+            <p>Access exam papers for your modules.</p>
+         </div>
+        </a>
+
+        <a href="../develop/under.html">
+         <div class="resource">
+            <h2>Recorded Sessions</h2>
+            <p>Access previously recorded sessions for your modules.</p>
+         </div>
+        </a>
+
+        <button class="button" onclick="window.location.href = 'modules.html';">
+            Back
+        </button>
+    </div>
+    <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="..\shared\footer.js"></script>
+    <script src="..\shared\navlogout.js"></script>
+
+    <script>
+        const userRole = 'student';
+        function setResourceVisibility(resourceId, allowedRoles) {
+            const resourceElement = document.getElementById(resourceId);
+            if (allowedRoles.includes(userRole)) {
+                resourceElement.style.display = 'block';
+            } else {
+                resourceElement.style.display = 'none';
+            }
+        }
+        setResourceVisibility('assignments', ['student', 'tutor']);
+        setResourceVisibility('test-papers', ['tutor', 'lecturer','student']);
+        setResourceVisibility('exam-papers', ['tutor', 'lecturer','student']);
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Diary</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <header>
+        <h1>Student Diary</h1>
+    </header>
+    
+    <main>
+        <section id="create-entry">
+            <h2>Create New Entry</h2>
+            <form id="tutorApplicationForm">
+                <label for="entry-type">Entry Type:</label>
+                <select id="entry-type">
+                    <option value="text">Text Entry</option>
+                    <option value="audio">Audio Entry</option>
+                </select><br><br>
+                
+                <div id="text-entry">
+                    <label for="entry-content">Entry Content:</label><br>
+                    <textarea id="entry-content" rows="4" cols="50"></textarea><br><br>
+                </div>
+
+                <div id="audio-entry" style="display: none;">
+                    <label for="record-audio">Record Audio:</label><br>
+                    <button id="record-audio-button">Start Recording</button>
+                    <audio id="audio-preview" controls></audio><br><br>
+                </div>
+                
+                <label for="entry-title">Entry Title:</label><br>
+                <input type="text" id="entry-title"><br><br>
+                
+                <label for="entry-date">Entry Date:</label><br>
+                <input type="date" id="entry-date"><br><br>
+                
+                <label for="entry-files">Attach Files:</label><br>
+                <input type="file" id="entry-files" multiple><br><br>
+                
+                <button type="submit" id="submit-button">Save Entry</button>
+            </form>
+        </section>
+        
+        <section id="view-entries">
+            <h2>View Entries</h2>
+            <button id="delete-selected" class="button">
+                Delete Selected
+            </button>
+            <!-- Entries will be displayed here -->
+        </section>
+        <button class="btn" onclick="window.location.href = '../dashboards/student.html';">
+            Back
+        </button>    
+    </main>
+    <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="audio-recorder.js"></script>
+    <script src="..\shared\navlogout.js"></script>
+    <script src="..\shared\footer.js"></script>
+</body>
+</html>

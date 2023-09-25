@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Book>
+@{
+    ViewBag.Title = "My Books";
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Author</th>
+            <th>BookType</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Book m in Model)
+        {
+            <tr>
+                <td>@m.Name</td>
+                <td>@m.Year</td>
+                <td>@m.Author</td>
+                <td>@m.BookType.BookTypeName</td>
+                <td>
+                    @for (int i = 1; i < 5; i++)
+                    {
+                        @if (i < m.Rating)
+                        {
+
+                            <span class="fa fa-solid fa-star"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-regular fa-star"></span>
+                        }
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Book" asp-action="Edit" asp-route-id="@m.BookId" asp-route-slug="@m.Slug">Edit</a>
+                    <a class="btn btn-primary" asp-controller="Book" asp-action="Delete" asp-route-id="@m.BookId" asp-route-slug="@m.Slug">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" asp-controller="Book" asp-action="Add">Add New Book</a>
+
+<hr />
+<footer>
+    <div class="text-center">
+        <p>Created by: S.T Ngubane(2018530325) </p>
+        <p>
+            <span class="fa fa-copyright"></span>
+            University of the Free State (2023)
+        </p>
+    </div>
+</footer>

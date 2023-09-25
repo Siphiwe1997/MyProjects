@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Jobs</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header{
+            color: white;
+            text-align: center;
+            background-color: #007BFF;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .job-listing {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+        }
+        .job-title {
+            font-size: 24px;
+        }
+        .job-description {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .job-buttons {
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-view {
+            background-color: #28A745;
+        }
+        .btn-back {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .requirements {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .show-requirements {
+            display: block;
+        }
+    </style>
+    <script>
+        function toggleRequirements(jobId) {
+            const requirements = document.getElementById(`requirements-${jobId}`);
+            requirements.classList.toggle("show-requirements");
+        }
+    </script>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <header>
+        <h1>Tutor Jobs</h1>
+    </header>
+    <div class="job-listing">
+        <h2 class="job-title">Tutor Job - Programming</h2>
+        <p class="job-description">We are looking for a programming tutor to teach various programming languages and concepts.</p>
+        <div class="job-buttons">
+            <button class="btn btn-view" onclick="toggleRequirements('programming')">View Requirements</button>
+            <button class="btn btn-apply" onclick="window.location.href='apply.html';">Apply</button>
+        </div>
+        <div id="requirements-programming" class="requirements">
+            <h3>Requirements:</h3>
+            <ul>
+                <li>Must be in the second year of study or higher.</li>
+                <li>Strong proficiency in programming languages like C#, Java, Python, or C++.</li>
+                <li>Excellent communication and teaching skills.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="job-listing">
+        <h2 class="job-title">Tutor Job - Mathematics</h2>
+        <p class="job-description">We are seeking a math tutor to help students with various math topics and problem-solving techniques.</p>
+        <div class="job-buttons">
+            <button class="btn btn-view" onclick="toggleRequirements('math')">View Requirements</button>
+            <button class="btn btn-apply" onclick="window.location.href='apply.html';">Apply</button>
+        </div>
+        <div id="requirements-math" class="requirements">
+            <h3>Requirements:</h3>
+            <ul>
+                <li>Must be in the second year of study or higher.</li>
+                <li>Expertise in university-level mathematics, including calculus and linear algebra.</li>
+                <li>Patience and the ability to explain complex concepts clearly.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="job-listing">
+        <h2 class="job-title">Tutor Job - Physics</h2>
+        <p class="job-description">We have an opening for a physics tutor to assist students in understanding complex physics theories and concepts.</p>
+        <div class="job-buttons">
+            <button class="btn btn-view" onclick="toggleRequirements('physics')">View Requirements</button>
+            <button class="btn btn-apply" onclick="window.location.href='apply.html';">Apply</button>
+        </div>
+        <div id="requirements-physics" class="requirements">
+            <h3>Requirements:</h3>
+            <ul>
+                <li>Must be in the second year of study or higher.</li>
+                <li>Strong grasp of university-level physics, including classical mechanics and electromagnetism.</li>
+                <li>Effective problem-solving and tutoring skills.</li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="btn btn-back" onclick="window.location.href='../dashboards/student.html';">
+        Back
+    </button>
+    <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="..\shared\footer.js"></script>
+    <script src="..\shared\navlogout.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.grid-container {
+    margin-bottom: 0;
+    padding-top: 5px;
+    padding-left: 80px;
+    padding-right: 80px;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.grid-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%; /* Ensure the grid items take up the full width */
+    padding-bottom: 100%; /* Create a square aspect ratio */
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.grid-item h2 {
+    margin: auto;
+    margin-top: 45%;
+    text-align: center;
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+        
+.diary {
+    background-image: url('../images/icons/diary.png');
+}
+.live-stream {
+   background-image: url('../images/icons/live.png'); 
+}
+.resource-archive {
+   background-image: url('../images/icons/resource.png'); 
+    }
+.tutor-misconduct {
+   background-image: url('../images/icons/misconduct.png'); 
+}
+.coding-section {
+   background-image: url('../images/icons/coding.png'); 
+}
+.direct-message {
+   background-image: url('../images/icons/direct.png'); 
+   }
+.students-statistics {
+    background-image: url('../images/icons/stats.png'); 
+    }
+.tutoring-effect {
+    background-image: url('../images/icons/effect.png'); 
+}
+.to-do-list {
+    background-image: url('../images/icons/todo.png'); 
+}
+.lecturer-tutor-chat {
+    background-image: url('../images/icons/ltchat.png'); 
+        }
+.tutor-applications {
+    background-image: url('../images/icons/apply.png'); 
+}
+.quizzes {
+    background-image: url('../images/icons/quiz.png'); 
+    background-size: 16em;
+}
+
+.grid-link {
+    text-decoration: none;
+    color: inherit;
+}

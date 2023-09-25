@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Problems</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <header>
+    <h1>C# Coding Problems</h1>
+    </header>
+
+    <!-- Problem 1 -->
+    <div class="problem">
+        <h2>Problem 1: Fibonacci Series</h2>
+        <p class="problem-description">Write a C# program to print the Fibonacci series without using recursion and using recursion.</p>
+        <button class="btn" onclick="openCodeEditor('problem 1')">Solve Problem</button>
+    </div>
+
+    <!-- Problem 2 -->
+    <div class="problem">
+        <h2>Problem 2: Prime Number</h2>
+        <p class="problem-description">Write a C# program to check if a number is prime.</p>
+        <button class="btn" onclick="openCodeEditor('problem 2')">Solve Problem</button>
+    </div>
+
+    <!-- Problem 3 -->
+    <div class="problem">
+        <h2>Problem 3: Palindrome Number</h2>
+        <p class="problem-description">Write a C# program to check if a number is a palindrome.</p>
+        <button class="btn" onclick="openCodeEditor('problem 3')">Solve Problem</button>
+    </div>
+
+    <!-- Problem 4 -->
+    <div class="problem">
+        <h2>Problem 4: Decimal to Binary</h2>
+        <p class="problem-description">Write a C# program to convert a decimal number to binary.</p>
+        <button class="btn" onclick="openCodeEditor('problem 4')">Solve Problem</button>
+    </div>
+
+    <!-- Problem 5 -->
+    <div class="problem">
+        <h2>Problem 5: Armstrong Number</h2>
+        <p class="problem-description">Write a C# program to check if a number is an Armstrong number.</p>
+        <button class="btn" onclick="openCodeEditor('problem 5')">Solve Problem</button>
+    </div>
+
+    <!-- Code Editor Popup -->
+    <div class="code-editor" id="code-editor">
+        <h2>Code Editor</h2>
+        <textarea id="code-area" rows="10" cols="50"></textarea>
+        <button class="btn" onclick="submitSolution()">Submit</button>
+        <button class="btn" onclick="closeCodeEditor()">Close</button>
+    </div>
+
+    <button class="btn" id="back" onclick="window.location.href='../dashboards/student.html';">
+        Back
+    </button>
+
+    <script>
+        let currentProblemId = '';
+
+        function openCodeEditor(problemId) {
+            // Display the code editor for the selected problem
+            currentProblemId = problemId;
+            document.getElementById('code-editor').style.display = 'block';
+
+            // Load the C# console application template into the code editor
+            const cSharpTemplate = `using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Your C# code for ${problemId} goes here
+    }
+}`;
+
+            document.getElementById('code-area').value = cSharpTemplate;
+        }
+
+        function closeCodeEditor() {
+            // Close the code editor
+            document.getElementById('code-editor').style.display = 'none';
+            document.getElementById('code-area').value = ''; 
+        }
+
+        function submitSolution() {
+            closeCodeEditor();
+            alert(`Solution for ${currentProblemId} submitted for evaluation.`);
+        }
+    </script>
+     <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="..\shared\footer.js"></script>
+    <!--<script src="script.js"></script>-->
+    <script src="..\shared\navlogout.js"></script>
+</body>
+</html>

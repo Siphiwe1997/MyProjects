@@ -1,0 +1,27 @@
+﻿@model Subject
+@{
+	ViewData["Title"] = "Add subject";
+}
+<h2>Add Subject</h2>
+<form asp-action="Edit" method="post">
+	<div class="mb-3">
+		<label asp-for="SubjectName" class="form-label"></label>
+		<input asp-for="SubjectName" class="form-control" type="text"/>
+		<span asp-validation-for="SubjectName"></span>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="SubjectMarks" class="form-label"></label>
+		<input asp-for="SubjectMarks" class="form-control" type="text"/>
+		<span asp-validation-for="SubjectMarks"></span>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Level" class="form-label"></label>
+		<input asp-for="Level" class="form-control" type="text"/>
+		<span asp-validation-for="Level"></span>
+	</div>
+
+	<button class="btn btn-success" type="submit" >Add Subject</button>
+	<a asp-controller="Subject" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

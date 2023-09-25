@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Application Form</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <header>
+        <h1>Tutor Application Form</h1>
+    </header>
+    <main>
+        <form id="tutorApplicationForm" enctype="multipart/form-data">
+            <!-- Personal Information -->
+            <h2>Personal Information</h2>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+           <!-- Academic Background -->
+            <h2>Academic Background</h2>
+            <label for="university">University:</label>
+            <input type="text" id="university" name="university" required>
+
+            <label for="degree">Degree:</label>
+            <input type="text" id="degree" name="degree" required>
+
+            <label for="yearOfStudy">Year of Study:</label>
+            <select id="yearOfStudy" name="yearOfStudy" required>
+             <option value="1">First Year</option>
+             <option value="2">Second Year</option>
+             <option value="3">Third Year</option>
+             <option value="4">Fourth Year</option>
+             <option value="5">Fifth Year</option>
+            </select>
+
+            <!-- Tutoring Experience -->
+            <h2>Tutoring Experience</h2>
+            <label for="experience">Describe your tutoring experience:</label>
+            <textarea id="experience" name="experience" rows="4" required></textarea>
+
+            <!-- Relevant Skills -->
+            <h2>Relevant Skills</h2>
+            <label for="skills">List relevant skills (comma-separated):</label>
+            <input type="text" id="skills" name="skills" required>
+
+            <!-- Upload Documents -->
+            <h2>Upload Relevant Documents</h2>
+            <label for="resume">Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+        <button class="btn_back" onclick="window.location.href='jobs.html';">
+            Back
+        </button>
+    </main>
+    
+    <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="..\shared\footer.js"></script>
+
+    <script src="script.js"></script>
+    <script src="..\shared\navlogout.js"></script>
+</body>
+</html>

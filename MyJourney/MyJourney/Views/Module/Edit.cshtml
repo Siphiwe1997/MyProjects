@@ -1,0 +1,54 @@
+﻿@model Module
+
+@{
+    ViewData["Title"] = ViewBag.Action +" Subject";
+}
+
+<h2>@ViewBag.Action Subject</h2>
+
+<hr />
+<h4>Student</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Edit">
+            <input type="hidden" asp-for="ModuleId" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="mb-3">
+				<label asp-for="ModuleName" class="form-label"></label>
+				<input asp-for="ModuleName" class="form-control" type="text" />
+				<span asp-validation-for="ModuleName"></span>
+			</div>
+
+			<div class="mb-3">
+				<label asp-for="ModuleCode" class="form-label"></label>
+				<input asp-for="ModuleCode" class="form-control" type="text" />
+				<span asp-validation-for="ModuleCode"></span>
+			</div>
+
+			<div class="mb-3">
+				<label asp-for="ModuleMarks" class="form-label"></label>
+				<input asp-for="ModuleMarks" class="form-control" type="text" />
+				<span asp-validation-for="ModuleMarks"></span>
+			</div>
+
+			<div class="mb-3">
+				<label asp-for="Credits" class="form-label"></label>
+				<input asp-for="Credits" class="form-control" type="text" />
+				<span asp-validation-for="Credits"></span>
+			</div>
+
+			<div class="mb-3">
+				<label asp-for="Year" class="form-label"></label>
+				<input asp-for="Year" class="form-control" type="text" />
+				<span asp-validation-for="Year"></span>
+			</div>
+
+            <div class="mb-3">
+                <br />
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <button asp-action="Index" class="btn btn-outline-secondary">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

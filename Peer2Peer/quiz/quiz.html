@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes</title>
+    <link rel="stylesheet" href="../styles/custom.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <header>
+        <h1>Quizzes</h1>
+    </header>
+
+    <div class="quiz">
+        <h2>Math Quiz</h2>
+        <p class="quiz-description">Test your mathematical knowledge with this math quiz.</p>
+        <button class="btn" onclick="openQuiz('math-quiz')">Begin</button>
+    </div>
+
+    <div class="quiz">
+        <h2>Physics Quiz</h2>
+        <p class="quiz-description">Explore the world of physics with this challenging physics quiz.</p>
+        <button class="btn" onclick="openQuiz('physics-quiz')">Begin</button>
+    </div>
+
+    <div class="quiz">
+        <h2>C# Programming Quiz</h2>
+        <p class="quiz-description">Put your programming skills to the test with this C# programming quiz.</p>
+        <button class="btn" onclick="openQuiz('csharp-quiz')">Begin</button>
+    </div>
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuiz()">&times;</span>
+            <div id="quiz-container"></div>
+            <button id="next-btn" class="btn" onclick="showNextQuestion()">Next</button>
+            <button id="submit-btn" class="btn hidden" onclick="submitQuiz()">Submit</button>
+            <div id="quiz-success" class="hidden">Quiz submitted successfully!</div>
+        </div>
+    </div>
+    <button class="btn btn-back" onclick="window.location.href='../dashboards/student.html';">
+        Back
+    </button>
+    <div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script src="..\shared\footer.js"></script>
+    <script src="..\shared\navlogout.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

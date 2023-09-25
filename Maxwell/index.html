@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxwell-Boltzmann Distribution</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="background">
+        <h1>Maxwell-Boltzmann Distribution</h1>
+    </div>
+    <div class="container">
+        <!-- Particles will be generated here -->
+    </div>
+    <div class="controls">
+        <label for="speed">Particle Speed:</label>
+        <input type="range" id="speed" min="1" max="10" step="0.1" value="5">
+        
+        <label for="size">Particle Size:</label>
+        <input type="range" id="size" min="10" max="50" step="1" value="20">
+        
+        <label for="temperature">Temperature:</label>
+        <input type="range" id="temperature" min="1" max="100" step="1" value="50">
+        
+        <label for="factor">Particle Factor:</label>
+        <input type="range" id="factor" min="1" max="10" step="1" value="5">
+    </div>
+    <div class="graph">
+        <canvas id="velocity-chart" width="600" height="300"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

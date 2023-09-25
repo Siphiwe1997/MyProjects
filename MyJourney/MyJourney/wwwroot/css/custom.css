@@ -1,0 +1,17 @@
+﻿body {
+    background-image: url('/images/pattern.png');
+    background-repeat: repeat;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: mediumblue;
+    color: white;
+    border: 1px solid #ff6347;
+    border-radius: 5px;
+}
+
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
